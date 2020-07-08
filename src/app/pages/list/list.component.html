@@ -1,0 +1,33 @@
+<img src="https://picsum.photos/911/300" width="100%" alt="image" />
+<hr />
+<p-table [columns]="cols" [value]="lists" styleClass="ui-table-customers" [responsive]="true" [rowHover]="true"
+    [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                {{col.header}}
+                <p-sortIcon [field]="col.field" ariaLabel="Activate to sort"
+                    ariaLabelDesc="Activate to sort in descending order"
+                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+            </th>
+            <th>{{labels.actions}}</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-list let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{list[col.field]}}
+            </td>
+            <td>
+                <button pButton type="button" class="ui-button-danger" icon="pi pi-trash" iconPos="left" label="Delete"
+                    (click)="deleteList(list)"></button>
+                <button pButton type="button" icon="pi pi-window-minimize" iconPos="left" label="Update"
+                    (click)="updateList(list, 'Update')"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<div class="addBtn">
+    <button pButton type="button" label="Add a new row" (click)="updateList('', 'Add')"></button>
+</div>

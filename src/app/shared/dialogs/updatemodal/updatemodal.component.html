@@ -1,0 +1,35 @@
+<form>
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="setId">Id</label>
+                <input type="text" class="form-control form-control-sm" id="setId" aria-describedby="setId" name="id"
+                    [(ngModel)]="groupModel.id" />
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control form-control-sm" id="description" aria-describedby="description"
+                    name="description" [(ngModel)]="groupModel.description" />
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="priority">Priority</label>
+                <input type="text" class="form-control form-control-sm" id="priority" aria-describedby="priority"
+                    name="priority" [(ngModel)]="groupModel.priority" />
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="status">Status</label>
+                <input type="text" class="form-control form-control-sm" id="status" aria-describedby="status"
+                    name="status" [(ngModel)]="groupModel.status" />
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="button" class="btn btn-primary btn-sm" (click)="update()">{{btnText}}</button>
+        </div>
+    </div>
+</form>

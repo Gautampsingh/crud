@@ -1,0 +1,11 @@
+.container {
+  min-height: calc(100vh - 80px);
+  width: 60%;
+  margin: 10px auto;
+}
+
+@media screen and (max-width: 481px) {
+  .container {
+    width: 100%;
+  }
+}
