@@ -3,7 +3,6 @@ import { ListService } from 'src/app/core/services/list.service';
 import Label from 'src/app/shared/constants/Label';
 
 import { DialogService } from 'primeng/dynamicdialog';
-import { AddmodalComponent } from 'src/app/shared/dialogs/addmodal/addmodal.component';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 import { UpdatemodalComponent } from 'src/app/shared/dialogs/updatemodal/updatemodal.component';
@@ -44,7 +43,6 @@ export class ListComponent implements OnInit {
   }
 
   deleteList(myData: any) {
-    console.log(myData);
     this.listService.delete(myData.title).subscribe(
       (response: any) => {
         this.toastr.success('Deleted successfully', '', {
@@ -61,7 +59,6 @@ export class ListComponent implements OnInit {
   }
 
   updateList(myData: any, text: string) {
-    console.log(myData);
     const ref = this.dialogService.open(UpdatemodalComponent, {
       header: text,
       data: myData,
@@ -115,31 +112,4 @@ export class ListComponent implements OnInit {
       }
     });
   }
-
-  // addList(myData: any, text: string) {
-  //   console.log(myData);
-  //   const ref = this.dialogService.open(AddmodalComponent, {
-  //     header: text,
-  //     data: myData,
-  //     width: '50%',
-  //   });
-
-  //   ref.onClose.subscribe((response) => {
-  //     if (response) {
-  //       // this.listService.put(response, myData.title).subscribe(
-  //       //   (response: any) => {
-  //       //     this.toastr.success('Deleted successfully', '', {
-  //       //       timeOut: environment.toasterTimeOut,
-  //       //     });
-  //       //     this.getLists();
-  //       //   },
-  //       //   (error: any) => {
-  //       //     this.toastr.error('Error fetching data', '', {
-  //       //       timeOut: environment.toasterTimeOut,
-  //       //     });
-  //       //   }
-  //       // );
-  //     }
-  //   });
-  // }
 }

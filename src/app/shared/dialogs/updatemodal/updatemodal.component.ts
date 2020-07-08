@@ -26,11 +26,9 @@ export class UpdatemodalComponent implements OnInit {
   ngOnInit(): void {
     this.dataVal = this.config.data;
     if (this.config.header === 'Add') {
-      console.log('Add');
       this.btnText = 'Add List';
       this.groupModel.btnText = 'Add';
     } else {
-      console.log('Update');
       this.btnText = 'Update';
       this.groupModel = {
         btnText: this.config.header,
@@ -40,13 +38,9 @@ export class UpdatemodalComponent implements OnInit {
         status: this.dataVal.status,
       };
     }
-    console.log(this.ref);
   }
 
   update() {
-    // TODO: Use EventEmitter with form value
-    // console.warn(this.profileForm.value);
-    console.log(this.groupModel);
     this.ref.close(this.groupModel);
   }
 }

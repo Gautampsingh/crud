@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { AddmodalComponent } from './dialogs/addmodal/addmodal.component';
 import { UpdatemodalComponent } from './dialogs/updatemodal/updatemodal.component';
 
 // Do declare components, pipes, directives, and export them.
@@ -20,7 +19,7 @@ import { UpdatemodalComponent } from './dialogs/updatemodal/updatemodal.componen
     FormsModule,
     ReactiveFormsModule,
   ],
-  declarations: [HeaderComponent, FooterComponent, AddmodalComponent, UpdatemodalComponent],
+  declarations: [HeaderComponent, FooterComponent, UpdatemodalComponent],
   exports: [
     CommonModule,
     FormsModule,
